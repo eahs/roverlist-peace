@@ -24,6 +24,7 @@ namespace RoverList
             if (head == null)
             {
                 head = newNode;
+                current = newNode;
             }
             else
             {
