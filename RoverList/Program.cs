@@ -11,9 +11,22 @@ namespace RoverList
         static void Main(string[] args)
         {
             RoverList<string> list = new RoverList<string>();
+            string[] words = {"dog", "cat", "horse", "rabbit", "parrot"}; // !! needs more words
 
             // TODO:  Implement the RoverList class
             // TODO:  Create a RoverList and then fill it with 16 words
+
+            foreach (string word in words)
+            {
+                list.Add(word);
+            }
+            
+            /*
+             for debugging:
+            list.Add(0, "hello");
+            
+            Console.Write("f");
+            */
 
             // TODO:  Print out the list
 

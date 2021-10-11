@@ -34,16 +34,42 @@ namespace RoverList
             count++;
         }
 
-        public override void Add(int Position, T data)
+        public override void Add(int position, T data)
         {
             Node newNode = new Node(data);
-            
-            throw new NotImplementedException();
+
+            if (position >= count || head == null)
+            {
+                Add(data);
+            }
+            else if (position == 0)
+            {
+                Node old = head;
+                head = newNode;
+                head.Next = old;
+            }
+            else
+            {
+                Node previous = head;
+                int currPos = 0;
+                
+                while(currPos < position - 1)
+                {
+                    previous = previous.Next;
+                    currPos++;
+                }
+                
+                Node old = previous.Next;
+                previous.Next = newNode;
+                newNode.Next = old;
+            }
+            count++;
         }
 
         public override void Clear()
         {
             head = null;
+            count = 0;
         }
 
         public override T ElementAt(int Position)
