@@ -50,15 +50,7 @@ namespace RoverList
             }
             else
             {
-                Node previous = head;
-                int currPos = 0;
-                
-                while(currPos < position - 1)
-                {
-                    previous = previous.Next;
-                    currPos++;
-                }
-                
+                Node previous = NodeAt(position - 1);
                 Node old = previous.Next;
                 previous.Next = newNode;
                 newNode.Next = old;
@@ -72,7 +64,7 @@ namespace RoverList
             count = 0;
         }
 
-        public override T ElementAt(int Position)
+        public override T ElementAt(int position)
         {
             throw new NotImplementedException();
         }
@@ -82,9 +74,24 @@ namespace RoverList
             throw new NotImplementedException();
         }
 
-        public override bool RemoveAt(int Position)
+        public override bool RemoveAt(int position)
         {
             throw new NotImplementedException();
         }
+
+        public Node NodeAt(int position)
+        {
+            Node previous = head;
+            int currPos = 0;
+                
+            while(currPos <= position)
+            {
+                previous = previous.Next;
+                currPos++;
+            }
+
+            return previous;
+        }
+            
     }
 }
