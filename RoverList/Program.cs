@@ -20,6 +20,16 @@ namespace RoverList
             {
                 list.Add(word);
             }
+<<<<<<< Updated upstream
+=======
+            
+           /* 
+            //for debugging:
+            list.Add(0, "hello");
+            
+            Console.Write("f");
+            */
+>>>>>>> Stashed changes
 
             // TODO:  Print out the list
             list.ListNodes();

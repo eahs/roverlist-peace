@@ -65,8 +65,8 @@ namespace RoverList
         /// Delete a Node in the specified position
         /// </summary>
         /// <param name="Position">Position of node to be deleted</param>
-        /// <returns>Successful</returns>
-        public abstract bool RemoveAt(int Position);
+        /// <returns>Value at position</returns>
+        public abstract T RemoveAt(int Position);
 
         /// <summary>
         /// Removes all Nodes from the list

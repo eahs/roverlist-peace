@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -74,21 +75,26 @@ namespace RoverList
             throw new NotImplementedException();
         }
 
-        public Node RemoveAt(int position)
+        public override T RemoveAt(int position)
         {
-            int x = 0; 
-            while (current.Next != null)
+            T removedValue = default(T);
+            
+            if (position == 0)
             {
-                x++;
-                current = current.Next;
-                if (x == position)
-                {
-                    current = current.Next; 
-                }
+                removedValue = head.Data;
+                head = head.Next; 
             }
+            else
+            {
+                Node previous = NodeAt(position - 1);
+                removedValue = previous.Data;
+                previous.Next = previous.Next.Next; 
+            }
+
+            return removedValue;
         }
 
-        public Node NodeAt(int position)
+        private Node NodeAt(int position)
         {
             Node previous = head;
             int currPos = 0;
