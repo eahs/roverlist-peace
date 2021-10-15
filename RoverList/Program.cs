@@ -20,18 +20,14 @@ namespace RoverList
             {
                 list.Add(word);
             }
-<<<<<<< Updated upstream
-=======
-            
-           /* 
-            //for debugging:
-            list.Add(0, "hello");
-            
-            Console.Write("f");
-            */
->>>>>>> Stashed changes
+            /* 
+             //for debugging:
+             list.Add(0, "hello");
+             
+             Console.Write("f");
+             */
 
-            // TODO:  Print out the list
+           // TODO:  Print out the list
             list.ListNodes();
 
             // TODO:  Prompt the user to input words, add those words to the list until they enter the word "done"
