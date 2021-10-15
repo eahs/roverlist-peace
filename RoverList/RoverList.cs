@@ -74,9 +74,18 @@ namespace RoverList
             throw new NotImplementedException();
         }
 
-        public override bool RemoveAt(int position)
+        public Node RemoveAt(int position)
         {
-            throw new NotImplementedException();
+            int x = 0; 
+            while (current.Next != null)
+            {
+                x++;
+                current = current.Next;
+                if (x == position)
+                {
+                    current = current.Next; 
+                }
+            }
         }
 
         public Node NodeAt(int position)
