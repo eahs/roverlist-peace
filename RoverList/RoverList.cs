@@ -67,7 +67,7 @@ namespace RoverList
 
         public override T ElementAt(int position)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(); //not sure how to do this. I think theres already an ElementAt method in c#. 
         }
 
         public override void ListNodes()
