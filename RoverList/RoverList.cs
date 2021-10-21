@@ -67,19 +67,27 @@ namespace RoverList
 
         public override T ElementAt(int position)
         {
-            throw new NotImplementedException(); //not sure how to do this. I think theres already an ElementAt method in c#. 
+            Node curr = NodeAt(position);
+            if (curr == null)
+            {
+                return default(T);
+            }
+            else
+            {
+                return NodeAt(position).Data;
+            }
+            
         }
 
         public override void ListNodes()
         {
-            int z = 0; 
-            while (current.Next != null)
+            Node curr = head;
+            while (curr != null)
             {
-                Console.WriteLine(NodeAt(z));
-                current = current.Next; 
-                z++; 
+                Console.Write($"{curr.Data}, ");
+                curr = curr.Next;
             }
-            //throw new NotImplementedException();
+            Console.WriteLine("\n");
         }
 
         public override T RemoveAt(int position)
@@ -103,10 +111,14 @@ namespace RoverList
 
         private Node NodeAt(int position)
         {
+            if (position == 0)
+            {
+                return head;
+            }
             Node previous = head;
             int currPos = 0;
                 
-            while(currPos <= position)
+            while(currPos < position)
             {
                 previous = previous.Next;
                 currPos++;
@@ -114,7 +126,5 @@ namespace RoverList
 
             return previous;
         }
-        
-        
     }
 }

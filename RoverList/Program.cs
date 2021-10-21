@@ -20,14 +20,8 @@ namespace RoverList
             {
                 list.Add(word);
             }
-            /* 
-             //for debugging:
-             list.Add(0, "hello");
-             
-             Console.Write("f");
-             */
 
-           // TODO:  Print out the list
+            // TODO:  Print out the list
             list.ListNodes();
 
             // TODO:  Prompt the user to input words, add those words to the list until they enter the word "done"
@@ -35,11 +29,13 @@ namespace RoverList
             string input = "";
             
             Console.WriteLine("Input words to the end of the list. Type 'done' to finish.");
+            Console.Write("Type word: ");
+            input = Console.ReadLine();
             while (input != "done")
             {
+                list.Add(input);
                 Console.Write("Type word: ");
                 input = Console.ReadLine();
-                list.Add(input);
             }
             
             list.ListNodes();
@@ -47,21 +43,27 @@ namespace RoverList
             // TODO:  Prompt the user to input words, add those words to the FRONT of the list until they enter the word "done"
             // TODO:  Print out the list
             Console.WriteLine("Input words to the front of the list. Type 'done' to finish.");
-            
+            Console.Write("Type word: ");
+            input = Console.ReadLine();
             while (input != "done")
             {
+                list.Add(0, input);
                 Console.Write("Type word: ");
                 input = Console.ReadLine();
-                list.Add(0, input);
             }
             
             list.ListNodes();
             
             // TODO:  Remove every word with an odd length
             // TODO:  Print out the list
+            Console.WriteLine("Removing every word with an odd length");
             for (int i = 0; i < list.Count; i++)
             {
                 string word = list.ElementAt(i);
+                if (word == null)
+                {
+                    break;
+                }
                 int length = word.Length;
                 if (length % 2 == 1)
                 {
@@ -74,6 +76,7 @@ namespace RoverList
 
             // TODO:  Clear the list
             // TODO:  Print out the list
+            Console.WriteLine("Clearing List");
             list.Clear();
             list.ListNodes();
 
