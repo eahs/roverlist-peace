@@ -72,7 +72,14 @@ namespace RoverList
 
         public override void ListNodes()
         {
-            throw new NotImplementedException();
+            int z = 0; 
+            while (current.Next != null)
+            {
+                Console.WriteLine(NodeAt(z));
+                current = current.Next; 
+                z++; 
+            }
+            //throw new NotImplementedException();
         }
 
         public override T RemoveAt(int position)
